@@ -12,7 +12,7 @@ export class RegisterComponent implements OnInit {
    }
 
   ngOnInit() {
-    alert('Componente de registro lanzado');
+    
   }
 
 }
