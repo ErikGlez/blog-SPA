@@ -17,11 +17,11 @@
           <a class="nav-link" [routerLink]="['/inicio']">Inicio <span class="sr-only">(current)</span></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Categorias</a>
+          <a class="nav-link" >Categorias</a>
         </li>
 
       </ul>
-      <ul class="navbar-nav navbar-right">
+      <ul class="navbar-nav navbar-right" *ngIf="!identity">
           <li class="nav-item active">
               <a class="nav-link" [routerLink]="['/login']">Login</a>
             </li>
@@ -29,19 +29,19 @@
               <a class="nav-link" [routerLink]="['/registro']">Registro</a>
             </li>
       </ul>
-      <ul class="navbar-nav navbar-right">
+      <ul class="navbar-nav navbar-right" *ngIf="identity && identity.name">
         <li ngbDropdown class="nav-item dropdown">
-          <a ngbDropdownToggle class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+          <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">
-            Nombre Usuario
+            {{ identity. name + ' ' + identity.surname}}
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Crear post</a>
-            <a class="dropdown-item" href="#">Crear categoria</a>
+            <a class="dropdown-item" >Crear post</a>
+            <a class="dropdown-item" >Crear categoria</a>
             <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Mi perfil</a>
-            <a class="dropdown-item" href="#">Ajustes</a>
-            <a class="dropdown-item" href="#">Salir</a>
+            <a class="dropdown-item" >Mi perfil</a>
+            <a class="dropdown-item" >Ajustes</a>
+            <a class="dropdown-item" [routerLink]="['/logout/1']">Salir</a>
           </div>
         </li>
       </ul>
