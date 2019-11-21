@@ -30,6 +30,11 @@
             </li>
       </ul>
       <ul class="navbar-nav navbar-right" *ngIf="identity && identity.name">
+          <li *ngIf="identity && identity.image" class="nav-item">
+             <div class="avatar_mask">
+                <img src="{{url + 'user/avatar/' + identity.image}}" alt="Avatar usuario" class="avatar_nav"/>
+             </div> 
+          </li>
         <li ngbDropdown class="nav-item dropdown">
           <a ngbDropdownToggle class="nav-link dropdown-toggle"  id="navbarDropdown" role="button" data-toggle="dropdown"
             aria-haspopup="true" aria-expanded="false">

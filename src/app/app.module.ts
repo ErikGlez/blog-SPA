@@ -3,14 +3,20 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { routing, appRoutingProviders } from './app.routing';
-import { AppComponent } from './app.component';
 
+import "froala-editor/js/froala_editor.pkgd.min.js";
+import { FroalaEditorModule, FroalaViewModule } from 'angular-froala-wysiwyg';
+import { AngularFileUploaderModule } from "angular-file-uploader";
+
+import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { LoginComponent } from './components/login/login.component';
 import { RegisterComponent } from './components/register/register.component';
 import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
+
+import * as $ from 'jquery'; window["$"] = $; window["jQuery"]=$; 
 
 @NgModule({
   declarations: [
@@ -26,7 +32,10 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
     NgbModule,
     routing,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    FroalaEditorModule.forRoot(),
+    FroalaViewModule.forRoot(),
+    AngularFileUploaderModule
   ],
   providers: [
     appRoutingProviders
