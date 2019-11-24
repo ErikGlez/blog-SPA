@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { CategoryNewComponent } from './components/category-new/category-new.component';
+import { PostNewComponent } from './components/post-new/post-new.component';
 
 
 // Definir las rutas
@@ -20,6 +21,7 @@ const appRoutes: Routes = [
     {path: 'registro', component: RegisterComponent},
     {path: 'ajustes', component: UserEditComponent},
     {path: 'crear-categoria', component: CategoryNewComponent},
+    {path: 'crear-post', component: PostNewComponent},
     {path: '**', component: ErrorComponent}
 
 ];

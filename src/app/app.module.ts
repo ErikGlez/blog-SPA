@@ -17,7 +17,8 @@ import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
 import * as $ from 'jquery';
-import { CategoryNewComponent } from './components/category-new/category-new.component'; window["$"] = $; window["jQuery"]=$; 
+import { CategoryNewComponent } from './components/category-new/category-new.component';
+import { PostNewComponent } from './components/post-new/post-new.component'; window["$"] = $; window["jQuery"]=$; 
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ import { CategoryNewComponent } from './components/category-new/category-new.com
     HomeComponent,
     ErrorComponent,
     UserEditComponent,
-    CategoryNewComponent
+    CategoryNewComponent,
+    PostNewComponent
   ],
   imports: [
     BrowserModule,
