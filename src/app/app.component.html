@@ -42,7 +42,7 @@
           </a>
           <div ngbDropdownMenu class="dropdown-menu" aria-labelledby="navbarDropdown">
             <a class="dropdown-item" >Crear post</a>
-            <a class="dropdown-item" >Crear categoria</a>
+            <a class="dropdown-item" [routerLink]="['/crear-categoria']">Crear categoria</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" >Mi perfil</a>
             <a class="dropdown-item" [routerLink]="['/ajustes']" >Ajustes</a>
@@ -56,4 +56,6 @@
 
   <!-- Contenido-->
   <router-outlet></router-outlet>
+  
+ 
 </div>

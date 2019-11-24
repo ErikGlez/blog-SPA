@@ -16,7 +16,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ErrorComponent } from './components/error/error.component';
 import { UserEditComponent } from './components/user-edit/user-edit.component';
 
-import * as $ from 'jquery'; window["$"] = $; window["jQuery"]=$; 
+import * as $ from 'jquery';
+import { CategoryNewComponent } from './components/category-new/category-new.component'; window["$"] = $; window["jQuery"]=$; 
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import * as $ from 'jquery'; window["$"] = $; window["jQuery"]=$;
     RegisterComponent,
     HomeComponent,
     ErrorComponent,
-    UserEditComponent
+    UserEditComponent,
+    CategoryNewComponent
   ],
   imports: [
     BrowserModule,
