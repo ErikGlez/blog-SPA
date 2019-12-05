@@ -52,7 +52,7 @@
                         <img src="{{url + 'user/avatar/' + identity.image}}" alt="Avatar usuario" class="avatar_edit"/>
                     </div>
                     <angular-file-uploader
-                    [config]="afuConfig" [resetUpload]=resetVar
+                    [config]="afuConfig" [resetUpload]="resetVar"
                     (ApiResponse)="avatarUpload($event)">
                     </angular-file-uploader>
             </div>
