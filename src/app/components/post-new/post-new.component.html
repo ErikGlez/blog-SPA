@@ -1,52 +1,59 @@
 <div class="col-md-12 mt-3">
-        <h1>
-            {{page_title}}
-        </h1 >
-       <p>Añade un nuevo articulo al blog</p>
-       <hr/>
-        <!-- mensajes de alerta-->
-        <!-- Formulario de ajustes -->
-        <form class="col-md-5 ml-0 pl-0" #postNew="ngForm"  (ngSubmit)="onSubmit(postNew)">
+    <h1>
+        {{page_title}}
+    </h1>
+    <p>Añade un nuevo articulo al blog</p>
+    <hr />
+    <!-- mensajes de alerta-->
 
-            <div class="form-group">
-                <label for="title">Título</label>
-                <input type="text" name="title" #title="ngModel" [(ngModel)]="post.title" class="form-control" required/>
-                <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">
-                    El titulo no es válido
-                </small>
-            </div>
-
-            <div class="form-group">
-                <label for="content">Contenido</label>
-                <textarea  [froalaEditor]="froala_options" name="content" class="form-control" #content="ngModel" [(ngModel)]="post.content"></textarea>
-
-                <small *ngIf="!content.valid && content.touched" class="invalid-feedback d-block">
-                    El contenido no es válido
-                </small>
-            </div>
-
-            <div class="form-group">
-                <label for="category_id">
-                    Categoria
-                </label>
-                <select name="category_id" #category="ngModel" [(ngModel)]="post.category_id" class="form-control">
-                    <option *ngFor="let category of categories" value="{{category.id}}">
-                        {{category.name}}
-                    </option>
-                </select>
-            </div>
-
-            <div class="form-group">
-                <label for="image">Imagen</label>
-                    <angular-file-uploader
-                        [config]="afuConfig
-                        " [resetUpload]="resetVar" (ApiResponse)="imageUpload($event)">
-                    </angular-file-uploader>
-            </div>
-
-            <input type="submit" value="Guardar" class="btn btn-success" [disabled]="postNew.invalid"/>
-
-        </form>
-        <br>
-        
+    <div class="alert alert-success col-md-5 mt-3" *ngIf="status == 'success'">
+        Los datos se han guardado correctamente.
     </div>
+    <div class="alert alert-danger col-md-5 mt-3" *ngIf="status == 'error'">
+        Los datos no se han guardado!.
+    </div>
+    <!-- Formulario de ajustes -->
+    <form class="col-md-5 ml-0 pl-0" #postNew="ngForm" (ngSubmit)="onSubmit(postNew)">
+
+        <div class="form-group">
+            <label for="title">Título</label>
+            <input type="text" name="title" #title="ngModel" [(ngModel)]="post.title" class="form-control" required />
+            <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">
+                El titulo no es válido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="content">Contenido</label>
+            <textarea [froalaEditor]="froala_options" name="content" class="form-control" #content="ngModel"
+                [(ngModel)]="post.content"></textarea>
+
+            <small *ngIf="!content.valid && content.touched" class="invalid-feedback d-block">
+                El contenido no es válido
+            </small>
+        </div>
+
+        <div class="form-group">
+            <label for="category_id">
+                Categoria
+            </label>
+            <select name="category_id" #category="ngModel" [(ngModel)]="post.category_id" class="form-control">
+                <option *ngFor="let category of categories" value="{{category.id}}">
+                    {{category.name}}
+                </option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="image">Imagen</label>
+            <angular-file-uploader [config]="afuConfig
+                        " [resetUpload]="resetVar" (ApiResponse)="imageUpload($event)">
+            </angular-file-uploader>
+        </div>
+
+        <input type="submit" value="Guardar" class="btn btn-success" [disabled]="postNew.invalid" />
+
+    </form>
+    <br>
+
+</div>
