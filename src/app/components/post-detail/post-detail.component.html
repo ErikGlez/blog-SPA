@@ -1,0 +1,23 @@
+<div class="col-md-12" *ngIf="!post">
+Cargando...
+</div>
+
+<div class="col-md-12 mt-3" *ngIf="post">
+<h1>{{post.title}}</h1>
+
+<p>{{post.category.name}} - {{post.user.name + ' ' + post.user.surname}}</p>
+<hr/>
+<p [innerHtml]="post.content"></p>
+
+<!--imagen-->
+<div class="post-image col-md-4" *ngIf="post.image">
+    <img src="{{ url + 'post/image/' + post.image }}" class="w-100" />
+ </div>
+ <div class="post-image col-md-4" *ngIf="!post.image">
+       <img src="https://via.placeholder.com/400x250" class="w-100" />
+    </div>
+
+</div>
+
+ 
+
