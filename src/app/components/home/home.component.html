@@ -34,7 +34,7 @@
                </a>
 
                <span *ngIf="identity && identity.sub == post.user_id">
-                  <a [routerLink]="['/inicio']" class="btn btn-warning mr-2">
+                  <a [routerLink]="['/editar-entrada',post.id]" class="btn btn-warning mr-2">
                      Editar
                    </a>
                    <a [routerLink]="['/inicio']" class="btn btn-danger">

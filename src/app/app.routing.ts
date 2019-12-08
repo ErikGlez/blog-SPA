@@ -11,6 +11,7 @@ import { UserEditComponent } from './components/user-edit/user-edit.component';
 import { CategoryNewComponent } from './components/category-new/category-new.component';
 import { PostNewComponent } from './components/post-new/post-new.component';
 import { PostDetailComponent } from './components/post-detail/post-detail.component';
+import { PostEditComponent } from './components/post-edit/post-edit.component';
 
 
 // Definir las rutas
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
     {path: 'crear-categoria', component: CategoryNewComponent},
     {path: 'crear-post', component: PostNewComponent},
     {path: 'entrada/:id', component: PostDetailComponent},
+    {path: 'editar-entrada/:id', component: PostEditComponent},
     {path: '**', component: ErrorComponent}
 
 ];

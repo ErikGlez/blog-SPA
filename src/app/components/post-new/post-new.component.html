@@ -2,7 +2,9 @@
     <h1>
         {{page_title}}
     </h1>
-    <p>Añade un nuevo articulo al blog</p>
+    <p *ngIf="!is_edit">Añade un nuevo articulo al blog</p>
+
+    <p *ngIf="is_edit && post">Modifica el post <strong>{{post.title}}</strong></p>
     <hr />
     <!-- mensajes de alerta-->
 
