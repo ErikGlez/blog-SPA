@@ -24,10 +24,11 @@ export class PostEditComponent implements OnInit {
 
   public froala_options: Object = {
     charCounterCount: true,
-    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
-    toolbarButtonsXS: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
-    toolbarButtonsSM: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
-    toolbarButtonsMD: ['bold', 'italic', 'underline', 'paragraphFormat','alert'],
+    language:'es',
+    toolbarButtons: ['bold', 'italic', 'underline', 'paragraphFormat'],
+    toolbarButtonsXS: ['bold', 'italic', 'underline', 'paragraphFormat'],
+    toolbarButtonsSM: ['bold', 'italic', 'underline', 'paragraphFormat'],
+    toolbarButtonsMD: ['bold', 'italic', 'underline', 'paragraphFormat'],
   };
 
   public afuConfig = {
@@ -79,7 +80,11 @@ export class PostEditComponent implements OnInit {
       this._postService.getPost(id).subscribe(
         response=>{
           if(response.status== 'success'){
+            
             this.post = response.post;
+            if(this.post.user_id != this.identity.sub){
+              this._router.navigate(['inicio']);
+            }
             
           }else{
             this._router.navigate(['inicio']);
