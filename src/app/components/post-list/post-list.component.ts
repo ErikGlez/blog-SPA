@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'post-list',
@@ -10,9 +10,15 @@ export class PostListComponent implements OnInit {
   @Input() identity;
   @Input() url;
 
+  @Output() eliminar = new EventEmitter<number>();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  modaldeletePost(postId){
+    this.eliminar.emit(postId);
   }
 
 }

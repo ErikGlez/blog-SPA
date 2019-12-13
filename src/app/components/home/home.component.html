@@ -8,6 +8,6 @@
    <hr>
    
     <!-- LISTADO DE POSTS -->
-    <post-list [posts]="posts" [identity]="identity" [url]="url"></post-list>
+    <post-list [posts]="posts" [identity]="identity" [url]="url" (eliminar)="deletePost($event)"></post-list>
 
 </div>

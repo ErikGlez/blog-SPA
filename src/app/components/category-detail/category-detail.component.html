@@ -17,8 +17,8 @@
 
     <div *ngIf="posts && posts.length >=1">
 
-         <!-- LISTADO DE POSTS -->
-    <post-list [posts]="posts" [identity]="identity" [url]="url"></post-list>
+    <!-- LISTADO DE POSTS -->
+    <post-list [posts]="posts" [identity]="identity" [url]="url" (eliminar)="deletePost($event)"></post-list>
     </div>
 
 
