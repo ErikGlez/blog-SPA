@@ -30,7 +30,7 @@ const appRoutes: Routes = [
     {path: 'entrada/:id', component: PostDetailComponent},
     {path: 'editar-entrada/:id', component: PostEditComponent, canActivate: [IdentityGuard]},
     {path: 'categoria/:id', component: CategoryDetailComponent },
-    {path: 'perfil/id', component: ProfileComponent },
+    {path: 'perfil/:id', component: ProfileComponent },
     {path: 'error', component: ErrorComponent },
     {path: '**', component: ErrorComponent}
 
